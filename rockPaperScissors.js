@@ -7,7 +7,7 @@ function getComputerChoice(){
 
 function getHumanChoice(){
     let input = prompt("What would you like to choose ? rock, paper or scissor ?")
-    return input;
+    return input.toLowerCase(); // Lowercasing all possible input variations
 }
 
 function playRound(humanChoice, computerChoice ){
