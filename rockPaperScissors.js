@@ -1,4 +1,3 @@
-let rounds =  prompt("How many rounds would you like to play?")
 let humanScore = 0;
 let computerScore = 0;
 let tieRounds = 0;
@@ -9,13 +8,7 @@ function getComputerChoice(){
     return possibleValues[randomIndex];
 }
 
-function getHumanChoice(){
-    let input = prompt("What would you like to choose ? rock, paper or scissor ?")
-    return input.toLowerCase(); // Lowercasing all possible input variations
-}
-
 function playRound(humanChoice, computerChoice){
-    let result = "";
     if (humanChoice == computerChoice) {
         result = "tie";
     } 
@@ -28,23 +21,24 @@ function playRound(humanChoice, computerChoice){
     return result;
 }
 
-for (let i = 1; i <= rounds; i++) {
-    let humanChoice = getHumanChoice();
+function myFunc(humanChoice){
     let computerChoice = getComputerChoice();
-    let roundResult = playRound(humanChoice,computerChoice);
-    if (roundResult == "win"){
-        humanScore += 1;
-        alert(`You ${roundResult}!${humanChoice} beats ${computerChoice}. Score after round ${i} is ${humanScore}:${computerScore}. Press OK to proceed`)
-    } 
-    else if (roundResult == "lose"){
-        computerScore += 1;
-        alert(`You ${roundResult}!${computerChoice} beats ${humanChoice}. Score after round ${i} is ${humanScore}:${computerScore}. Press OK to proceed`)
-    } 
-    else if (roundResult == "tie"){
-        tieRounds += 1;
-        alert(`It's a tie, Score after round ${i} is ${humanScore}:${computerScore}. Press OK to proceed`)
-    }
+    let roundResult = playRound(humanChoice, computerChoice);
+    // if (roundResult == "win"){
+    //     humanScore += 1;        
+    // } 
+    // else if (roundResult == "lose"){
+    //     computerScore += 1;
+    // } 
+    // else if (roundResult == "tie"){
+    //     tieRounds += 1;
+    // }
+    console.log(`You ${roundResult}`);
 }
 
-alert(`Thank you for playing, you won ${humanScore} rounds, computer won ${computerScore} rounds and there were ${tieRounds} tie rounds`)
-
+let choices = document.querySelectorAll("button.choice");
+choices.forEach((choice) => {
+    choice.addEventListener("click", () => {
+        myFunc(choice.id);
+    })
+});

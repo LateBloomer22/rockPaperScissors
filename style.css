@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.content, .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    height: 90vh;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.btns {
+    display: flex;
+}
+
+.footer {
+    background-color: darkgray;
+    height: 10vh;
+    font-size: 18px;
+}
