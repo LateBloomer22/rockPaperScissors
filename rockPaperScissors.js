@@ -51,7 +51,7 @@ function myFunc(humanChoice){
         } else if (humanScore < computerScore){
             winner.textContent = `You lost this game. The game will automatically reset after ${timer} seconds`;
         }        
-        setTimeout(resetFunc, 2000)
+        setTimeout(resetFunc, timer*1000);
 
     }
 }
