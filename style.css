@@ -15,8 +15,25 @@
     gap: 20px;
 }
 
-.btns {
-    display: flex;
+button {
+    font-size: 18px;
+    margin-right: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+button:hover{
+    background-color: lightcoral;
+    color: white;
+}
+
+button:active {
+    background-color: black;
+    color: white;
+}
+
+.result, .score, .winner {
+    font-size: 18px;
 }
 
 .footer {
